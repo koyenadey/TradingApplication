@@ -10,6 +10,7 @@ import { useContext, useEffect, useState } from "react";
 import * as SecureStore from "expo-secure-store";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { ActivityIndicator } from "react-native";
+import Config from "react-native-config";
 export interface PlayListItem {
   etag: string;
   id: string;
@@ -38,9 +39,9 @@ export interface PlaylistResponse {
   };
 }
 
-const apiKey = "AIzaSyCxco-hbkX_Wp-QvO-3RfuDBlNnBGNfFSk";
-const playlistId = "PLzynUbVXXGRU-RAraKZ11q0EAjtmcAzrx";
-const playlistUrl = `https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&maxResults=10&playlistId=${playlistId}&key=${apiKey}`;
+const apiKey = Config.API_KEY;
+const playlistId = Config.PLAYLIST_ID;
+const playlistUrl = `${Config.PLAYLIST_URL}&playlistId=${playlistId}&key=${apiKey}`;
 
 export default function RootLayout() {
   return (
