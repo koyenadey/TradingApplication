@@ -1,0 +1,9 @@
+.DS_Store
+bin/
+obj/
+appsettings.*.json
+appsettings.json
+TradingAPI.http
+**/.vscode
+# Local History for Visual Studio Code
+.history/
